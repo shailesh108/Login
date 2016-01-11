@@ -1,0 +1,38 @@
+ <strong class="">Login</strong>
+
+                                <div class="panel-body">
+<%= form_for(@user)  do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :Uname ,:class => "col-sm-3 control-label" %><br>
+    <div class="col-sm-9">
+    <%= f.text_field :Uname ,:class => "form-control" %>
+  
+  </div>
+                        </div>
+  <div class="form-group">
+                        
+    <%= f.label :Password ,:class => "col-sm-3 control-label" %><br>
+    <div class="col-sm-9">
+    <%= f.text_field :Password ,:class => "form-control" %>
+  </div>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ </div>
+                <div class="panel-footer">Not Registered? <a href="#" class="">Register here</a>
+                </div>
+            
